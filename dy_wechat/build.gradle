@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
@@ -9,8 +9,6 @@ android {
         applicationId "com.example.android_temp"
         minSdk 21
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
     }
 
     buildTypes {
@@ -26,5 +24,5 @@ android {
 }
 
 dependencies {
-
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }
