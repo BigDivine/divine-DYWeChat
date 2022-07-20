@@ -36,8 +36,8 @@ task generateSourcesJar(type: Jar){
 publishing{
     publications{
         dyMaven(MavenPublication){
-            groupId='com.divine.wechat'
-            artifactId='divine.yang'
+            groupId='com.divine'
+            artifactId='wechat'
             version='1.0.0'
         }
     }
