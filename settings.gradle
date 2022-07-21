@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "divine-DYWeChat"
 include ':dy_wechat'
-include ':app'
