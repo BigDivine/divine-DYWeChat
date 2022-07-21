@@ -33,12 +33,15 @@ dependencies {
 //jitpack.io ERROR: No build artifacts found 问题解决
 //由于在Android studio开发库时会带com.android.libraryplugin，生成了artifacts
 //所以我们需要手动添加artifacts。
-publishing{
-    publications{
-        dyMaven(MavenPublication){
-            groupId='com.divine.wechat'
-            artifactId='wechat'
-            version='1.0.1'
+afterEvaluate {
+    publishing{
+        publications{
+            release(MavenPublication){
+                from components.release
+                groupId='com.github.BigDivine'
+                artifactId='divine-DYWeChat'
+                version='1.0.1'
+            }
         }
     }
 }
