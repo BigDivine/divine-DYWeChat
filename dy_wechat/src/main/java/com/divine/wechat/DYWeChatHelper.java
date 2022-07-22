@@ -19,7 +19,7 @@ public class DYWeChatHelper {
     }
     public static DYWeChatHelper instance(Context mContext) {
         if (null == mDYWeChatHelper) {
-            synchronized (mDYWeChatHelper) {
+            synchronized (DYWeChatHelper.class) {
                 if (null == mDYWeChatHelper) {
                     mDYWeChatHelper = new DYWeChatHelper(mContext);
                 }
@@ -35,7 +35,7 @@ public class DYWeChatHelper {
 //        获取用户个人信息则填写snsapi_userinfo
         loginReq.scope = "snsapi_userinfo";
 //        该参数可用于防止csrf攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数加session进行校验
-        loginReq.state = "123";
+        loginReq.state = "wechat_sdk_demo_test";
         WXApi.sendReq(loginReq);
     }
 

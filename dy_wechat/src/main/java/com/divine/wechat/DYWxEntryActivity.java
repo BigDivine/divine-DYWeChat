@@ -7,9 +7,27 @@ import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 
 public abstract class DYWxEntryActivity extends Activity implements IWXAPIEventHandler {
+    /**
+     * @param baseReq
+     *  String transaction;
+     *  String openId;
+     */
     @Override
-    public abstract void onReq(BaseReq baseReq);
+    public  void onReq(BaseReq baseReq){
+        this.onReq(baseReq.openId,baseReq.transaction);
+    }
+    /**
+     * @param baseResp
+     *  int errCode;
+     *  String errStr;
+     *  String transaction;
+     *  String openId;
+     */
+    @Override
+    public  void onResp(BaseResp baseResp){
+        this.onResp(baseResp.errCode,baseResp.errStr,baseResp.transaction,baseResp.openId);
+    }
+    protected abstract void onReq(String openId, String transaction);
 
-    @Override
-    public abstract void onResp(BaseResp baseResp);
+    protected abstract void onResp(int errCode, String errStr, String transaction, String openId);
 }

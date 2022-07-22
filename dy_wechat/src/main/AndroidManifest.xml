@@ -3,4 +3,10 @@
     package="com.divine.wechat">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--    targetSdkVersion升级到30的第三方应用，由于Android 11 软件包可见性 特性的影响，-->
+    <!--    OpenSDK的接口可能无法正常拉起微信，从而无法使用微信的部分功能，-->
+    <!--    需要在主工程的AndroidManifest.xml 中增加标签-->
+    <queries>
+        <package android:name="com.tencent.mm" />
+     </queries>
 </manifest>
